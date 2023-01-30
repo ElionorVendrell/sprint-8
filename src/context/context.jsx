@@ -2,6 +2,7 @@ import { createContext } from "react";
 import React from "react";
 import { useState, useEffect } from "react";
 import App from "../App";
+import { Loading } from "./loading";
 
 export const StarsContext = createContext();
 
@@ -29,9 +30,7 @@ export const StarsContextProvider = (props) => {
   return (
     <div>
       {loading ? (
-        <div className='loader'>
-          <span>Loading...</span>
-        </div>
+        <Loading />
       ) : (
         <StarsContext.Provider value={startShips}>
           <App />
