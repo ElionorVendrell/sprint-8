@@ -5,9 +5,10 @@ export const BoxStarShips = styled.div`
   border-radius: 0.2rem;
   margin: 2rem;
   display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  height: 4rem;
-  width: 100%;
+  flexdirection: column;
+  justify-content: left;
+  padding-left: 1rem;
+  align-items: left;
+  height: 4.5rem;
+  width: 700px;
 `;
