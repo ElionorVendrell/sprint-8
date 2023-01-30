@@ -3,10 +3,21 @@ import { StarsContext } from "./context/context";
 import "./index.css";
 import { BoxStarShips } from "./Styled";
 import logo from "./assets/logo.png";
+import { StarShipCard } from "./StarShipCard";
+import { useState } from "react";
 
 function App() {
   const StarShips = useContext(StarsContext);
   console.log("StarShips a APP", StarShips);
+
+  const [showComponent, setShowComponent] = useState(false);
+
+  const showComponentFunction = (name) => {
+    setShowComponent(!showComponent);
+    if (showComponent === true) {
+      console.log("CARD:", <StarShipCard name={name} />);
+    }
+  };
 
   return (
     <div>
@@ -21,6 +32,7 @@ function App() {
             }}
           >
             <p
+              onClick={() => showComponentFunction(startShip.name)}
               className='starShipName'
               style={{
                 display: "flex",
@@ -28,7 +40,6 @@ function App() {
                 marginTop: "10px",
               }}
             >
-              {" "}
               {startShip.name.toUpperCase()}
             </p>
             <p

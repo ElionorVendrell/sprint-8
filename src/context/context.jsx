@@ -10,11 +10,13 @@ export const StarsContextProvider = (props) => {
     return fetch("https://swapi.dev/api/starships/").then((res) => res.json());
   };
   const [startShips, setStartShips] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchFunction()
       .then((res) => {
         setStartShips(res.results);
+        setLoading(false);
       })
 
       .catch((error) => {
@@ -25,8 +27,16 @@ export const StarsContextProvider = (props) => {
   console.log(startShips);
 
   return (
-    <StarsContext.Provider value={startShips}>
-      <App />
-    </StarsContext.Provider>
+    <div>
+      {loading ? (
+        <div className='loader'>
+          <span>Loading...</span>
+        </div>
+      ) : (
+        <StarsContext.Provider value={startShips}>
+          <App />
+        </StarsContext.Provider>
+      )}
+    </div>
   );
 };
