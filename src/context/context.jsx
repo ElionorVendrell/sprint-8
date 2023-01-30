@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import react from "react";
+import React from "react";
 import { useState, useEffect } from "react";
 import App from "../App";
 

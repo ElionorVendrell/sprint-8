@@ -14,15 +14,22 @@
 body {
   margin: auto;
   display: flex;
-  place-items: center;
+  align-items: center;
   justify-content: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: center;
   color: rgba(255, 255, 255, 0.87);
   background-color: #161616;
 
 }
 
+
+.logo{
+  width: 18%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
 .starShipName{
 font-family: 'Jura';
 font-weight:700;

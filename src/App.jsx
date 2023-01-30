@@ -6,11 +6,11 @@ import logo from "./assets/logo.png";
 
 function App() {
   const StarShips = useContext(StarsContext);
-  console.log("valor", StarShips);
+  console.log("StarShips a APP", StarShips);
 
   return (
     <div>
-      <img src='./assets/logo.png' alt='logo de star wars' />
+      <img className='logo' src={logo} alt='logo de star wars' />
 
       {StarShips.map((startShip) => (
         <BoxStarShips key={startShip.name}>
@@ -29,18 +29,18 @@ function App() {
               }}
             >
               {" "}
-              {startShip.name.toUpperCase()}{" "}
+              {startShip.name.toUpperCase()}
             </p>
             <p
               className='starShipModel'
               style={{
                 display: "flex",
-                flexDirection: "column",
+                flexDirection: "row",
                 marginTop: "-14px",
                 marginLeft: "0px",
               }}
             >
-              {startShip.model}{" "}
+              {startShip.model}
             </p>
           </div>
         </BoxStarShips>
