@@ -3,20 +3,22 @@ import React from "react";
 import { useState, useEffect } from "react";
 import App from "../App";
 import { Loading } from "./loading";
+import ShipList from "../ShipList";
 
 export const StarsContext = createContext();
 
 export const StarsContextProvider = (props) => {
-  const fetchFunction = () => {
-    return fetch("https://swapi.dev/api/starships/").then((res) => res.json());
+  const fetchFunction = async () => {
+    const response = await fetch("https://swapi.dev/api/starships/");
+    return await response.json();
   };
   const [startShips, setStartShips] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchFunction()
-      .then((res) => {
-        setStartShips(res.results);
+      .then((response) => {
+        setStartShips(response.results);
         setLoading(false);
       })
 
@@ -25,7 +27,7 @@ export const StarsContextProvider = (props) => {
       });
   }, []);
 
-  console.log(startShips);
+
 
   return (
     <div>
@@ -33,7 +35,7 @@ export const StarsContextProvider = (props) => {
         <Loading />
       ) : (
         <StarsContext.Provider value={startShips}>
-          <App />
+          <ShipList />
         </StarsContext.Provider>
       )}
     </div>

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+/* BOX GRIS SHIPLIST */
 export const BoxStarShips = styled.div`
   background-color: #393939;
   border-radius: 0.2rem;
@@ -11,4 +12,5 @@ export const BoxStarShips = styled.div`
   align-items: left;
   height: 4.5rem;
   width: 700px;
+  cursor: pointer;
 `;

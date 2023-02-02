@@ -12,39 +12,65 @@
 }
 
 body {
-  margin: auto;
-  display: grid;
-  place-items: center;
+  margin-left: 19rem;
+  display: flex;
   justify-content: center;
   color: rgba(255, 255, 255, 0.87);
   background-color: #161616;
   height: 100vh;
-
 }
 
-
+/* HEADER */
 .logo{
-  margin-left: 2rem;
+  margin-left: 19rem;
   margin-top: 3rem;
   width: 18%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+.login{
+  margin-left: 54rem;
+  margin-top: -2rem;
+}
 
+.linia{
+  margin-top: 3rem;
+  border-top: 1px solid white;
+  width: 100vh;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 0.25px solid white;
+  justify-content: center;
+  align-items: center;
+}
+.nav{
+  margin-left: 1rem;
+}
+
+/* Listado de naves (ShipList) */
 .starShipName{
-font-family: 'Jura';
-font-weight:700;
-cursor: pointer;
+  font-family: 'Jura';
+  font-weight:700;
+  display: "flex";
+  flex-direction: "column";
 }
 
 .starShipModel{
   font-family: 'Jura';
   font-weight: 300;
-  margin-left: 1rem;
+  margin-top: -15px;
+  display: "flex";
+  flex-direction: "row";
+}
+
+.divBox{
+  display:row;
+  align-items: center;
 }
 
 
+/* CLASE BUTTON */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -63,6 +89,12 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+
+
+
+
+/* LOADING */
 
 .wrapper{
   width:200px;
