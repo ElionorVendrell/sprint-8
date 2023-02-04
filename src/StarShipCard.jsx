@@ -5,19 +5,26 @@ import { useContext } from "react";
 export const StarShipCard = ({ name }) => {
   const [shipFiltered, setShipFiltered] = useState({});
   const StarShips = useContext(StarsContext);
-  console.log("StarShips a Starships card", StarShips);
-  console.log("name", name);
+
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     setShipFiltered(StarShips.find((starShip) => starShip.name === name));
   }, [name]);
 
+  const getId = shipFiltered.url && shipFiltered.url.slice(32, -1);
+  const image = `https://starwars-visualguide.com/assets/img/starships/${getId}.jpg`;
+
   console.log("FILTERED", shipFiltered);
-  //console.log("nom del filtered", shipFiltered.name);
 
   return (
     <>
-      <p>Nom: {shipFiltered.name}</p>
+      <h1>{shipFiltered.name}</h1>
+      {error ? (
+        <p className="errorImage">😢 Lo sentimos, no se pudo cargar la imagen</p>
+      ) : (
+        <img src={image} onError={() => setError(true)} alt='Imagen de la nave' />
+      )}{" "}
       <p>Starship class: {shipFiltered.starship_class}</p>
       <p>Manufacturer: {shipFiltered.manufacturer}</p>
       <p>Cost: {shipFiltered.cost_in_credits} credits</p>

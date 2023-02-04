@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import ShipList from "./ShipList";
 import { StarsContextProvider } from "./context/context";
 import { StarShipCard } from "./StarShipCard";
+import { Header } from "./Header";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <div className='App'>
         <Route exact path='/' component={ShipList} />
         <Route exact path='/StarShipCard' component={StarShipCard} />
+        
       </div>
     </Router>
   );
