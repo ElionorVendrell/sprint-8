@@ -5,6 +5,7 @@ import { BoxStarShips } from "./Styled";
 import { Header } from "./Header";
 import { StarShipCard } from "./StarShipCard";
 import { useState } from "react";
+import { ButtonMore } from "./Button";
 
 function ShipList() {
   const StarShips = useContext(StarsContext);
@@ -42,6 +43,7 @@ function ShipList() {
       ) : (
         <StarShipCard key={nom} name={nom} />
       )}
+    
     </div>
   );
 }

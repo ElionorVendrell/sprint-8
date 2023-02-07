@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import App from "../App";
 import { Loading } from "./loading";
 import ShipList from "../ShipList";
+import { Button } from "../Styled";
 
 export const StarsContext = createContext();
 
@@ -24,7 +25,9 @@ export const StarsContextProvider = (props) => {
   const sumPage = () => {
     setLoading(true);
     fetchFunction().then(() => {
-      setPage(page + 1);
+      if (page >= 4) {
+        setPage(1);
+      } else setPage(page + 1);
       setLoading(false);
     });
 
@@ -44,6 +47,7 @@ export const StarsContextProvider = (props) => {
   }, [page]);
 
   console.log(page);
+
   return (
     <div>
       {loading ? (
@@ -51,7 +55,7 @@ export const StarsContextProvider = (props) => {
       ) : (
         <StarsContext.Provider value={starShips}>
           <ShipList />
-          <button onClick={() => sumPage()}>View More</button>
+          <Button onClick={() => sumPage()}>View More</Button>
         </StarsContext.Provider>
       )}
     </div>
