@@ -1,21 +1,15 @@
 import React from "react";
-import "./index.css";
+/* import "./index.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import ShipList from "./ShipList";
 import { StarsContextProvider } from "./context/context";
 import { StarShipCard } from "./StarShipCard";
 import { Header } from "./Header";
+import { Link } from "react-router-dom"; */
+import { Routes } from "react-router-dom";
 
 function App() {
-  return (
-    <Router>
-      <div className='App'>
-        <Route exact path='/' component={ShipList} />
-        <Route exact path='/StarShipCard' component={StarShipCard} />
-        
-      </div>
-    </Router>
-  );
+  return <Routes />;
 }
 
 export default App;

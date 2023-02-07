@@ -5,7 +5,6 @@ import { BoxStarShips } from "./Styled";
 import { Header } from "./Header";
 import { StarShipCard } from "./StarShipCard";
 import { useState } from "react";
-//import { Link } from "react-router-dom";
 
 function ShipList() {
   const StarShips = useContext(StarsContext);
