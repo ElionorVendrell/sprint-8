@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { StarsContext } from "./context/context";
+import { StarsContext } from "../context/context";
 import { useContext } from "react";
-import { Button } from "./Styled";
+import { Button } from "../styles/Styled";
 
 // useState de Page
 // useState de Loading

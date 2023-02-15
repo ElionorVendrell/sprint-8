@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const BoxStarShips = styled.div`
   background-color: #393939;
   border-radius: 0.2rem;
-  margin: 2rem;
+  margin: 1rem;
   display: flex;
   flexdirection: column;
   justify-content: left;

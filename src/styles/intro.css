@@ -1,0 +1,109 @@
+body, html{
+  height: 100%;
+  min-height: 100vh;
+  margin: auto;
+  align-items: center;
+}
+p{
+    text-align: center;
+}
+
+.star-wars-intro {
+  background: url("./../assets/stars.jpg") center center;
+  width: 100vw;
+  height: 90vh;
+  font-family: Helvetica, verdana, sans-serif;
+  font-weight: 300;
+  color: #EBD71C;
+  background-color: #161616;
+  overflow: hidden;
+  position: relative;
+}
+
+
+/* CONTENIDO TEXTO*/
+.star-wars-intro .main-content{
+  margin-left: 20rem;
+  margin-right: auto;
+  position: absolute;
+  z-index: 3;
+  line-height: 2.5rem;
+  width: 60%;
+  height: 50em;
+  bottom: 0;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: justify;
+  overflow: hidden;
+  transform-origin: 50% 98%;
+  transform: perspective(525px) rotateX(25deg);
+}
+
+.star-wars-intro .main-content:after {
+  position: absolute;
+  content: ' ';
+  top: 0;
+  bottom: 60%;
+  background-image: linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+
+
+.star-wars-intro .title-content {
+  position: absolute;
+  top: 100%;
+  animation: scroll 150s linear 4s forwards;
+}
+
+.star-wars-intro .title-content > .content-header {
+  text-align: center;
+}
+
+
+
+/* IMÁGENES */
+
+#logo-scroll{
+  text-align: center !important;
+}
+
+.star-wars-intro .main-logo {
+  top: 20vh;
+  opacity: 0;
+  -webkit-animation: logo 5s ease-out 2.5s;
+  -moz-animation: logo 5s ease-out 2.5s;
+  -ms-animation: logo 5s ease-out 2.5s;
+  -o-animation: logo 5s ease-out 2.5s;
+  animation: logo 5s ease-out 2.5s;
+  animation: logo 100s infite;
+}
+
+
+
+@keyframes intro {
+  0% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+.star-wars-intro .main-content {
+    animation: intro 60s infinite;
+  }
+
+@keyframes logo {
+  0% { transform: scale(1); opacity: 1; }
+  50% { opacity: 1; }
+  100% { transform: scale(0.2); opacity: 0; }
+}
+
+@keyframes scroll {
+  0% { top: 100%; }
+  100% { top: -170%; }
+}
+
+@media screen and (max-width: 720px) {
+  .star-wars-intro .main-content {
+    font-size: 20px;
+  }
+ 
+}
