@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { StarsContext } from "../context/context";
 import { useContext } from "react";
 import { useParams } from "react-router";
+import "../styles/index.css";
+import { BoxCard } from "../styles/Styled";
 
 export const StarShipCard = () => {
   const StarShips = useContext(StarsContext);
@@ -27,29 +29,37 @@ export const StarShipCard = () => {
 
   return (
     <>
-      <h1>{showShip.name}</h1>
-      {error ? (
-        <p className='errorImage'>
-          😢 Lo sentimos, no se pudo cargar la imagen
-        </p>
-      ) : (
-        <img
-          src={image}
-          onError={() => setError(true)}
-          alt='Imagen de la nave'
-        />
-      )}{" "}
-      <p>Starship class: {showShip.starship_class}</p>
-      <p>Manufacturer: {showShip.manufacturer}</p>
-      <p>Cost: {showShip.cost_in_credits} credits</p>
-      <p>Crew: {showShip.crew}</p>
-      <p>Passenger Capacity: {showShip.passengers}</p>
-      <p>Consumables: {showShip.consumables}</p>
-      <p>Length: {showShip.length} meters</p>
-      <p>Maximum atmosphering speed: {showShip.max_atmosphering_speed} KM/H</p>
-      <p>Hyperdrive rating: {showShip.hyperdrive_rating}</p>
-      <p>Maximum speed in realspace: {showShip.MGLT} MGLT</p>
+      <div className='content'>
+        <h1 className="titleShip">{showShip.name}</h1>
+        {error ? (
+          <p className='errorImage'>
+            😢 Lo sentimos, no se pudo cargar la imagen
+          </p>
+        ) : (
+          <img
+          className="imgShip"
+            src={image}
+            onError={() => setError(true)}
+            alt='Imagen de la nave'
+          />
+        )}{" "}
+        <BoxCard>
+          <div className='textCard'>
+            <p>Starship class: {showShip.starship_class}</p>
+            <p>Manufacturer: {showShip.manufacturer}</p>
+            <p>Cost: {showShip.cost_in_credits} credits</p>
+            <p>Crew: {showShip.crew}</p>
+            <p>Passenger Capacity: {showShip.passengers}</p>
+            <p>Consumables: {showShip.consumables}</p>
+            <p>Length: {showShip.length} meters</p>
+            <p>
+              Maximum atmosphering speed: {showShip.max_atmosphering_speed} KM/H
+            </p>
+            <p>Hyperdrive rating: {showShip.hyperdrive_rating}</p>
+            <p>Maximum speed in realspace: {showShip.MGLT} MGLT</p>
+          </div>
+        </BoxCard>
+      </div>
     </>
   );
 };
-

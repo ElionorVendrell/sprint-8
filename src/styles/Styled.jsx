@@ -1,5 +1,16 @@
 import styled from "styled-components";
 
+export const BoxCard = styled.div`
+  background-color: #393939;
+  border-radius: 0.2rem;
+  justify-content: center;
+  margin: 1rem;
+  display: flex;
+  height: 40rem;
+  width: 450px;
+  margin-bottom: 20rem;
+`;
+
 /* BOX GRIS SHIPLIST */
 export const BoxStarShips = styled.div`
   background-color: #393939;

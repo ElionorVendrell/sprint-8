@@ -139,6 +139,25 @@ button{
   align-items: center;
 }
 
+/* SHIPCARD */
+
+.titleShip{
+  margin-top: 35rem;
+}
+p{
+text-align: left !important;
+}
+.imgShip{
+  width: 450px;
+}
+
+.textCard{
+align-items: center;
+  justify-content: center;
+  text-align: left;
+
+}
+
 /* ERROR IMAGE ON SHIPCARD */
 .errorImage{
   font-size: 18px;
